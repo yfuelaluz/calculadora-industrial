@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acceso Privado - Calculadora Industrial</title>
+  <style>
+    body { background: #0c2340; font-family: 'Segoe UI', Arial, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; color: #fff; padding: 20px; box-sizing: border-box; }
+    .container { width: 100%; max-width: 440px; display: flex; flex-direction: column; gap: 20px; }
+    .login-card { background: #ffffff; color: #1a1f2c; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); text-align: center; border: 1px solid #bfc1c3; }
+    h2 { margin-top: 0; color: #0c2340; font-size: 18px; text-transform: uppercase; font-weight: 700; margin-bottom: 5px; }
+    p { color: #505a5f; font-size: 12px; margin-bottom: 25px; font-weight: 500; }
+    .form-group { text-align: left; margin-bottom: 18px; }
+    label { font-size: 11px; font-weight: 700; color: #4a5568; text-transform: uppercase; display: block; margin-bottom: 6px; }
+    input { padding: 11px; border-radius: 6px; border: 1px solid #bfc1c3; font-size: 14px; width: 100%; font-weight: 500; box-sizing: border-box; }
+    .btn-login { background: #1d70b8; color: #fff; padding: 12px; border: 0; border-radius: 6px; font-size: 13px; font-weight: bold; width: 100%; cursor: pointer; text-transform: uppercase; margin-top: 10px; }
+    .error-msg { color: #df3034; font-size: 12px; font-weight: bold; margin-top: 12px; display: none; }
+    
+    /* VITRINA DE SUSCRIPCIONES INDUSTRIALES */
+    .pricing-card { background: #ffffff; color: #1a1f2c; padding: 25px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 2px solid #ffdd00; }
+    .pricing-card h3 { margin: 0 0 15px 0; color: #0c2340; font-size: 15px; text-transform: uppercase; font-weight: 700; text-align: center; }
+    .plan-box { background: #f8f9fa; border: 1px solid #bfc1c3; border-radius: 8px; padding: 12px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+    .plan-info { text-align: left; }
+    .plan-name { font-size: 13px; font-weight: bold; color: #0c2340; }
+    .plan-price { font-size: 12px; color: #505a5f; margin-top: 2px; }
+    .btn-buy { background: #00703c; color: #fff; padding: 8px 14px; border: 0; border-radius: 4px; font-size: 11px; font-weight: bold; cursor: pointer; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .btn-buy:hover { background: #00522c; }
+    .btn-vitalicio { background: #0c2340; color: #ffdd00; border: 1px solid #ffdd00; }
+    .btn-vitalicio:hover { background: #113159; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- TARJETA 1: VALIDACIÓN DE INGRESO -->
+  <div class="login-card">
+    <h2>🔒 CONTROL DE ACCESO INDUSTRIAL</h2>
+    <p>Ing. Eléctrica ELIENAI spa - Validación de Licencias</p>
+    
+    <div class="form-group">
+      <label>Correo Electrónico Autorizado</label>
+      <input type="email" id="emailAcceso" placeholder="ejemplo@ingenieria.cl">
+    </div>
+    
+    <button class="btn-login" onclick="enviarAccesoAlServidor()">Ingresar a Plataforma</button>
+    <div id="mensajeError" class="error-msg"></div>
+  </div>
+
+  <!-- TARJETA 2: ADQUISICIÓN DE PLANES INDUSTRIALES -->
+  <div class="pricing-card">
+    <h3>💼 ¿No tienes una membresía activa?</h3>
+    
+    <!-- PLAN 1: SEMANAL -->
+    <div class="plan-box">
+      <div class="plan-info">
+        <div class="plan-name">Suscripción Semanal Industrial</div>
+        <div class="plan-price">$5.990 CLP / semana</div>
+      </div>
+      <a href="https://www.flow.cl/btn.php?token=q68b46997b1bc51a0e4ee4fa7a5e341df3bab54c" target="_blank" class="btn-buy">Contratar</a>
+    </div>
+
+    <!-- PLAN 2: QUINCENAL -->
+    <div class="plan-box">
+      <div class="plan-info">
+        <div class="plan-name">Suscripción Quincenal Industrial</div>
+        <div class="plan-price">$9.490 CLP / quincena</div>
+      </div>
+      <a href="https://www.flow.cl/btn.php?token=n54aeb93ef6f305fe39b638a0f1c67f332f17e4b" target="_blank" class="btn-buy">Contratar</a>
+    </div>
+
+    <!-- PLAN 3: MENSUAL -->
+    <div class="plan-box">
+      <div class="plan-info">
+        <div class="plan-name">Suscripción Mensual Industrial</div>
+        <div class="plan-price">$15.990 CLP / mes</div>
+      </div>
+      <a href="https://www.flow.cl/btn.php?token=v7be216aa7e1e6ed4f66cbcfa5c7bcdb549f2789" target="_blank" class="btn-buy">Contratar</a>
+    </div>
+
+    <!-- PLAN 4: ANUAL -->
+    <div class="plan-box">
+      <div class="plan-info">
+        <div class="plan-name">Suscripción Anual Industrial</div>
+        <div class="plan-price">$159.990 CLP / año</div>
+      </div>
+      <a href="https://www.flow.cl/btn.php?token=v4c470f78892a2a35f622f0d668a06205c1d6581" target="_blank" class="btn-buy">Contratar</a>
+    </div>
+
+    <!-- PLAN 5: VITALICIO -->
+    <div class="plan-box" style="border-color: #ffdd00; background: #fffde6;">
+      <div class="plan-info">
+        <div class="plan-name" style="color: #0c2340;">Membresía Vitalicia Industrial</div>
+        <div class="plan-price" style="font-weight: bold; color: #00703c;">$249.990 CLP (Pago Único)</div>
+      </div>
+      <a href="https://www.flow.cl/btn.php?token=a6e826114ba35f927a0617372ff38dbfeacf36f4" target="_blank" class="btn-buy btn-vitalicio">Comprar</a>
+    </div>
+  </div>
+</div>
+
+<script>
+function enviarAccesoAlServidor() {
+  const email = document.getElementById('emailAcceso').value.trim();
+  const errorDiv = document.getElementById('mensajeError');
+  errorDiv.style.display = "none";
+
+  if (!email) { alert("Por favor, ingrese un correo."); return; }
+
+  fetch('/api/verificar-usuario', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.acceso) {
+      window.location.href = "/calculadora.html";
+    } else {
+      errorDiv.innerText = "⚠️ " + (data.mensaje || "Membresía inactiva en Webpay.");
+      errorDiv.style.display = "block";
+    }
+  })
+  .catch(err => {
+    errorDiv.innerText = "⚠️ Error de comunicación con el servidor.";
+    errorDiv.style.display = "block";
+  });
+}
+</script>
+</body>
+</html>
