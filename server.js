@@ -11,10 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 // Sirve de forma automática tus páginas públicas blindadas de la calculadora industrial
 app.use(express.static(path.join(__dirname, 'public')));
 
-// --- BASE DE DATOS MAESTRA PROTEGIDA (SOLO DUEÑO - SIN CUENTAS DE PRUEBA) ---
-const listaClientesPagados = {
-  "yfuelaluz@gmail.com": { activo: true, plan: "Creador / Dueño", expiracion: null }
-};
+// --- BASE DE DATOS MAESTRA PROTEGIDA (SOLO ENTRADAS WEBPAY VALIDAS) ---
+const listaClientesPagados = {};
 
 // FORZAR MURO DE ACCESO: Si entran a la raíz de la web, van directo al login obligatorio
 app.get('/', (req, res) => {
